@@ -1,6 +1,7 @@
 package com.mav.bank.user.controller;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.modelmapper.ModelMapper;
@@ -78,6 +79,12 @@ public class UserController
 	@GetMapping("/users/getUserByEmail/{email}")
 	public User getUserByEmail(@PathVariable("email") String email) {
 		return this.userService.getUserByEmail(email);
+	}
+	
+	@GetMapping("/users")
+	public List<User> getAllUsers() 
+	{
+		return userService.getAllUsers();
 	}
 
 }
